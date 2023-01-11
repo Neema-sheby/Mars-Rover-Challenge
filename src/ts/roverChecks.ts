@@ -1,9 +1,7 @@
-import { print, clear, askQuestion } from "./console";
-
-export class RoverManagement {
+export class roverChecks {
   public checkIfNumbers(num: any): boolean {
     if (isNaN(num)) return false;
-    else if (num === '') return false;
+    else if (num === "") return false;
     else {
       return true;
     }
