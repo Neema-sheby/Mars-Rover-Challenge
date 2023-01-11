@@ -1,6 +1,6 @@
 import { roverChecks } from "./roverChecks";
-import { moveRover } from "./controller";
-import { print, clear, askQuestion } from "./console";
+import { moveRover } from "../controller";
+import { print, clear, askQuestion } from "../console";
 
 const RoverTest = new roverChecks();
 

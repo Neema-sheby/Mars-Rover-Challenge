@@ -1,11 +1,12 @@
-import { Plateau } from "./Plateau";
-import { Rover } from "./rover";
-import { RoverControls } from "./roverControls";
+import { Plateau } from "./plateauDetails/Plateau";
+import { Rover } from "./roverDetails/rover";
+import { RoverControls } from "./roverDetails/roverControls";
 import { NUM_ROW, NUM_COL, GRID_GAP } from "./config";
 import { print, clear, askQuestion } from "./console";
 
 const plat1 = new Plateau(NUM_ROW, NUM_COL, GRID_GAP);
 const rover1 = new Rover();
+const rover2 = new Rover();
 
 const platLength = plat1.getLength();
 const platWidth = plat1.getWidth();
