@@ -1,50 +1,44 @@
-import { roverChecks } from "./roverChecks";
+import { checkIfNumbers, checkIfOrientation } from "./roverChecks";
 import { moveRover } from "../controller";
 import { print, clear, askQuestion } from "../console";
-
-const RoverTest = new roverChecks();
 
 export class Rover {
   private readonly location: any = [];
 
-  public setInitialCoordinateX(): void {
-    print("Welcome to Mars");
+  public constructor(private name: string) {
+    this.name = name;
+  }
+
+  public getName() {
+    return this.name;
+  }
+
+  public setInitialCoordinates(): void {
     askQuestion(
-      "Please enter the X coordinate of Rover :",
-      (ans: string | number) => {
-        if (RoverTest.checkIfNumbers(ans)) {
-          this.location.push(+ans);
-          this.setInitialCoordinateY();
+      `Please enter the coordinates and orientation of Rover:`,
+      (ans: string) => {
+        const arr: string[] = ans.split("");
+
+        if (checkIfNumbers(+arr[0])) {
+          this.location.push(+arr[0]);
         } else {
           //clear();
           print("Enter a valid number");
-          this.setInitialCoordinateX();
+          this.setInitialCoordinates();
         }
-      }
-    );
-  }
 
-  public setInitialCoordinateY(): void {
-    // clear();
-    askQuestion("Please enter the Y coordinate of Rover :", (ans: any) => {
-      if (RoverTest.checkIfNumbers(ans)) {
-        this.location.push(+ans);
-        this.setInitialOrientation();
-      } else {
-        //clear();
-        print("Enter a valid number");
-        this.setInitialCoordinateY();
-      }
-    });
-  }
+        if (checkIfNumbers(+arr[1])) {
+          this.location.push(+arr[1]);
+        } else {
+          //clear();
+          print("Enter a valid number");
+          this.setInitialCoordinates();
+        }
 
-  public setInitialOrientation(): void {
-    // clear();
-    askQuestion(
-      "Please enter the direction the Rover is facing :",
-      (ans: string) => {
-        if (RoverTest.checkIfOrientation(ans)) {
-          this.location.push(ans);
+        if (checkIfOrientation(arr[2])) {
+          this.location.push(arr[2]);
+
+          // if (this.location.length === 3) {
           clear();
           print("----------------------------------------------");
           print("Now the Rover is ready to move 🚗 🚗 🚗 ");
@@ -56,7 +50,7 @@ export class Rover {
         } else {
           //clear();
           print("Enter a valid direction - N, S, E or W");
-          this.setInitialOrientation();
+          this.setInitialCoordinates();
         }
       }
     );

@@ -1,17 +1,15 @@
-import { Rover } from "./rover";
 import { print, askQuestion } from "../console";
 
+// Controls to move Rover
 export class RoverControls {
   private newLocation: any = [];
   constructor(
-    private rover: Rover,
     private cordX: number,
     private cordY: number,
     private dir: string,
     private platLength: number,
     private platWidth: number
   ) {
-    this.rover = new Rover();
     this.cordX = this.cordX;
     this.cordY = this.cordY;
     this.dir = this.dir;
@@ -72,7 +70,7 @@ export class RoverControls {
           0;
         }
       });
-      console.log(`(${[this.cordX, this.cordY, this.dir].join(",")}) `);
+      console.log(`(${[this.cordX, this.cordY, this.dir].join("")}) `);
     });
   }
 
