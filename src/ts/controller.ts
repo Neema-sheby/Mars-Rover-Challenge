@@ -1,41 +1,42 @@
-import { Plateau } from "./plateauDetails/Plateau";
-import { roverNameArray } from "./rovers/rovers";
-import { RoverControls } from "./roverDetails/roverControls";
-import { NUM_ROW, NUM_COL, GRID_GAP, ROVER_GAP_X, ROVER_GAP_Y } from "./config";
+
+import { roverArray } from "./rovers/rovers";
 import { print, clear, askQuestion } from "./console";
 import { Rover } from "./roverDetails/rover";
+import {
+  writeSelectedRoverName,
+  writeIsRoverSelected,
+  writeRoverLocation,
+  readIsRoverSelected,
+  readRoverLocation,
+} from "./readWriteFile";
 
-// Set the platform size
-const plat1 = new Plateau(NUM_ROW, NUM_COL, GRID_GAP);
-const platLength = plat1.getLength();
-const platWidth = plat1.getWidth();
 
 // Select the Rover to move
+writeSelectedRoverName("");
+writeRoverLocation("");
+writeIsRoverSelected("false");
+
 function selectRovers(): void {
   print("There are two Rovers in the plateau.");
-  roverNameArray.forEach((rovName, i: number) =>
-    print(`${i + 1} - ${rovName}`)
-  );
+  roverArray.forEach((rov, i: number) => print(`${i + 1} - ${rov.getName()}`));
   askQuestion("Select the Rovers to move 🚗 :", (ans: string) => {
     clear();
     print("----------------------------------------------");
     print(`You've selected Rover${ans}`);
-    const rover = new Rover(`Rover${ans}`);
-    rover.setInitialCoordinates();
+    writeSelectedRoverName(`Rover${ans}`);
+    writeIsRoverSelected("true");
+    setRoverLocation(`Rover${ans}`);
   });
 }
 selectRovers();
 
-// Move the selected Rover
-export function moveRover(loc: any): void {
-  if (loc.length === 3) {
-    const selectedRoverCtrl = new RoverControls(
-      loc[0],
-      loc[1],
-      loc[2],
-      platLength,
-      platWidth
-    );
-    selectedRoverCtrl.move();
-  }
+// Set the Rover Location
+function setRoverLocation(roverName: string): void {
+  const isRoverSelected: string = readIsRoverSelected().replace(/\s+/g, "");
+
+  roverArray.map((rov, i) => {
+    if (rov.getName() === roverName && isRoverSelected === "true") {
+      rov.setInitialCoordinates(roverName);
+    }
+  });
 }

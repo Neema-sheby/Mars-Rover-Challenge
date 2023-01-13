@@ -1,3 +1,5 @@
+import { NUM_ROW, NUM_COL, GRID_GAP, ROVER_GAP_X, ROVER_GAP_Y } from "../config";
+
 export class Plateau {
   public constructor(
     public numRow: number,
@@ -16,3 +18,8 @@ export class Plateau {
     return this.numCol * this.gridGap;
   }
 }
+
+// Set the platform size
+export const plat1:Plateau = new Plateau(NUM_ROW, NUM_COL, GRID_GAP);
+export const platLength:number = plat1.getLength();
+export const platWidth:number = plat1.getWidth();
