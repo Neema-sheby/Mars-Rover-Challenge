@@ -1,6 +1,6 @@
 import readline from "readline";
 
-const r1 = readline.createInterface({
+const rl = readline.createInterface({
   input: process.stdin,
   output: process.stdout,
 });
@@ -16,5 +16,9 @@ export function clear() {
 }
 
 export function askQuestion(ques: string, callback: (arg: string) => void) {
-  r1.question(ques, callback);
+  rl.question(ques, callback);
+}
+
+export function startAgain(callback: () => void) {
+  rl.on("line", callback);
 }

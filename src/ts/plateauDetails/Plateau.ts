@@ -1,4 +1,8 @@
-import { NUM_ROW, NUM_COL, GRID_GAP, ROVER_GAP_X, ROVER_GAP_Y } from "../config";
+import { NUM_ROW, NUM_COL, GRID_GAP } from "../config";
+
+//-------------------------------------------------------------------------------------
+
+//Create the Plateau grid
 
 export class Plateau {
   public constructor(
@@ -19,7 +23,7 @@ export class Plateau {
   }
 }
 
-// Set the platform size
-export const plat1:Plateau = new Plateau(NUM_ROW, NUM_COL, GRID_GAP);
-export const platLength:number = plat1.getLength();
-export const platWidth:number = plat1.getWidth();
+// Set the Plateau size
+export const plat1: Plateau = new Plateau(NUM_ROW, NUM_COL, GRID_GAP);
+export const platLength: number = plat1.getLength();
+export const platWidth: number = plat1.getWidth();
