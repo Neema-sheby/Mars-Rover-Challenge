@@ -35,7 +35,7 @@ export class RoverControls {
     print("");
     print("----------------------------------------------");
     askQuestion(
-      `Enter moves of ${this.roverName} eg: MLRMMLR :`,
+      `Enter moves of ${this.roverName} eg: MLRMMLR ➡️  :`,
       (ans: string) => {
         if (checkKeysEntered(ans)) {
           //----------------------------------------------
