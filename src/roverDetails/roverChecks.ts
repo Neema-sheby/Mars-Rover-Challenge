@@ -27,12 +27,13 @@ export function checkIfOrientation(dir: string): boolean {
 }
 // Check if Rover is moving within boundary
 export function isRoverInBoundary(
-  x: number,
-  y: number,
+  cordX: number,
+  cordY: number,
   plateauLength: number,
   plateauWidth: number
 ): Boolean {
-  if (x > plateauLength || y > plateauWidth || x < 0 || y < 0) return false;
+  if (cordX > plateauLength || cordY > plateauWidth || cordX < 0 || cordY < 0)
+    return false;
   else return true;
 }
 
