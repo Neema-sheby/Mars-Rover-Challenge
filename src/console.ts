@@ -19,6 +19,6 @@ export function askQuestion(ques: string, callback: (arg: string) => void) {
   rl.question(ques, callback);
 }
 
-export function startAgain(callback: () => void) {
+export function onEnter(callback: () => void) {
   rl.on("line", callback);
 }

@@ -1,44 +1,5 @@
-import { print, clear, askQuestion } from "../console";
-import { NUM_ROW, NUM_COL, GRID_GAP } from "../config";
+import { readPlateauGrid } from "../readWriteFile";
 
-//-------------------------------------------------------------------------------------
-
-//Create the Plateau grid
-
-export class Plateau {
-  public constructor(
-    public numRow: number,
-    public numCol: number,
-    public gridGap: number
-  ) {
-    this.numRow = numRow;
-    this.numCol = numCol;
-    this.gridGap = gridGap;
-  }
-
-  public enterPlateauGrid(): void {
-    print("");
-    print("----------------------------------------------");
-    print("");
-    print("Welcome to Mars 😊 !");
-    print("");
-    print("----------------------------------------------");
-    print("");
-    askQuestion("Enter the plateau grid ➡️  : ", (ans: string) => {
-      
-    });
-    print("");
-  }
-
-  public getLength(): number {
-    return this.numRow * this.gridGap;
-  }
-  public getWidth(): number {
-    return this.numCol * this.gridGap;
-  }
-}
-
-// Set the Plateau size
-export const plat1: Plateau = new Plateau(NUM_ROW, NUM_COL, GRID_GAP);
-export const platLength: number = plat1.getLength();
-export const platWidth: number = plat1.getWidth();
+const plateauGrid: string = readPlateauGrid();
+export const plateauLength: number = +plateauGrid.split(" ")[0];
+export const plateauWidth: number = +plateauGrid.split(" ")[1];

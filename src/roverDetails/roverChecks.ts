@@ -1,4 +1,12 @@
-// Checking if the x coordinates and y coordinates are number
+// Checking the grid data
+export function checkGridData(loc: string): boolean {
+  const locArr = loc.split(" ");
+  if (locArr.length === 2) {
+    return true;
+  } else return false;
+}
+
+// Checking if the coordinates and orientation of Rover is inputed
 export function checkIfAllDataEntered(loc: string): boolean {
   const locArr = loc.split(" ");
   if (locArr.length === 3) {
@@ -6,7 +14,7 @@ export function checkIfAllDataEntered(loc: string): boolean {
   } else return false;
 }
 
-// Checking if the x coordinates and y coordinates are number
+// Checking if numbers
 export function checkIfNumbers(num: any): boolean {
   if (isNaN(num)) return false;
   else if (num === "") return false;

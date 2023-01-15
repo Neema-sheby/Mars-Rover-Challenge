@@ -1,5 +1,7 @@
 import { isRoverInBoundary } from "./roverChecks";
 
+//-------------------------------------------------------------------------------------
+
 export function startMovingRover(
   moves: string,
   cordX: number,
@@ -58,5 +60,5 @@ export function startMovingRover(
       0;
     }
   });
-  return [cordX, cordY, dir].join("");
+  return [cordX, cordY, dir].join(" ");
 }

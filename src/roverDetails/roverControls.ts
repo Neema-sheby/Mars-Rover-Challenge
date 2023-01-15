@@ -1,7 +1,7 @@
 import { startMovingRover } from "./startMovingRover";
-import { print, askQuestion, clear, startAgain } from "../console";
+import { print, askQuestion, clear, onEnter } from "../console";
 import { checkKeysEntered } from "./roverChecks";
-import { readRoverLocation } from "../readWriteFile";
+import { readRoverLocation, readPlateauGrid } from "../readWriteFile";
 import { reset } from "../reset";
 
 //-------------------------------------------------------------------------------------
@@ -9,19 +9,17 @@ import { reset } from "../reset";
 // Controls to move Rover
 export class RoverControls {
   private newLocation: any = [];
+  private plateauLength: number = +readPlateauGrid().split(" ")[0];
+  private plateauWidth: number = +readPlateauGrid().split(" ")[1];
   constructor(
     private roverName: string,
     private cordX: number,
     private cordY: number,
-    private dir: string,
-    private platLength: number,
-    private platWidth: number
+    private dir: string
   ) {
     this.cordX = this.cordX;
     this.cordY = this.cordY;
     this.dir = this.dir;
-    this.platLength = platLength;
-    this.platWidth = platWidth;
   }
 
   public move(): void {
@@ -44,8 +42,8 @@ export class RoverControls {
             this.cordX,
             this.cordY,
             this.dir,
-            this.platLength,
-            this.platWidth
+            this.plateauLength,
+            this.plateauWidth
           );
           clear();
           print("");
@@ -61,7 +59,7 @@ export class RoverControls {
           print("");
           print("----------------------------------------------");
           print("");
-          startAgain(() => reset());
+          onEnter(() => reset());
         } else {
           clear();
           print("----------------------------------------------");

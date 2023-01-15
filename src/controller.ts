@@ -5,25 +5,70 @@ import {
   writeIsRoverSelected,
   writeRoverLocation,
   readIsRoverSelected,
+  writePlateauGrid,
+  writeIsPlateauSet,
+  ReadIsPlateauSet,
+  readPlateauGrid,
 } from "./readWriteFile";
-import { checkIfNumbers } from "./roverDetails/roverChecks";
+import { checkGridData, checkIfNumbers } from "./roverDetails/roverChecks";
 import { Rover } from "./roverDetails/rover";
 
 //-------------------------------------------------------------------------------------
 
 //Reset the files
-
+writePlateauGrid("");
+writeIsPlateauSet("false");
 writeSelectedRoverName("");
 writeRoverLocation("");
 writeIsRoverSelected("false");
 
-// Select the Rover to move
-
-export function selectRovers(): void {
+// Create the plateau Grid
+function enterPlateauGrid(): void {
   print("");
   print("----------------------------------------------");
   print("");
   print("Welcome to Mars 😊 !");
+  print("");
+  print("----------------------------------------------");
+  print("");
+  askQuestion("Enter the plateau grid ➡️  : ", (ans: string) => {
+    if (checkGridData(ans)) {
+      const platDataArr: string[] = ans.split(" ");
+      if (checkIfNumbers(+platDataArr[0]) && checkIfNumbers(+platDataArr[1])) {
+        writePlateauGrid(ans);
+        writeIsPlateauSet("true");
+        checkPlateauSet();
+      } else {
+        clear();
+        print("----------------------------------------------");
+        print("");
+        print("Error 💥💥💥 : Please enter a valid number");
+        print("");
+        enterPlateauGrid();
+      }
+    } else {
+      clear();
+      print("----------------------------------------------");
+      print("");
+      print(
+        "Error 💥💥💥 : Please enter a valid X coordinate and Y coordinate with spaces between!"
+      );
+      print("");
+      enterPlateauGrid();
+    }
+  });
+  print("");
+}
+enterPlateauGrid();
+
+// Select the Rover to move
+
+export function selectRovers(): void {
+  clear();
+  print("");
+  print("----------------------------------------------");
+  print("");
+  print(`Your Platform 🏞️   is  (${readPlateauGrid()})`);
   print("");
   print("----------------------------------------------");
   print("");
@@ -54,7 +99,6 @@ export function selectRovers(): void {
     }
   });
 }
-selectRovers();
 
 // Set the Rover Location
 function setRoverLocation(roverName: string): void {
@@ -65,4 +109,13 @@ function setRoverLocation(roverName: string): void {
       rov.setInitialCoordinates(roverName);
     }
   });
+}
+
+// Set the Rover Location
+function checkPlateauSet(): void {
+  const isPlateauSet: string = ReadIsPlateauSet().replace(/\s+/g, "");
+
+  if (isPlateauSet === "true") {
+    selectRovers();
+  }
 }

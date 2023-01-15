@@ -1,4 +1,4 @@
-import { platLength, platWidth } from "../plateauDetails/Plateau";
+import { plateauLength, plateauWidth } from "../plateauDetails/Plateau";
 import {
   checkIfAllDataEntered,
   checkIfNumbers,
@@ -11,12 +11,6 @@ import {
 } from "../readWriteFile";
 import { RoverControls } from "./roverControls";
 import { print, clear, askQuestion } from "../console";
-
-// export const roverNameArray: string[] = ["Rover1", "Rover2"];
-
-// export const roverArray: Rover[] = roverNameArray.map(
-//   (name) => new Rover(name)
-// );
 
 //-------------------------------------------------------------------------------------
 
@@ -100,7 +94,7 @@ export class Rover {
           print("----------------------------------------------");
           print("");
           print(
-            "Error 💥💥💥 : Please enter valid coordinates and orientation ! (✅ eg: 1 2 N - Here 1 is the x coordinate, 2 is the y coordinate and N is the orientation)"
+            "Error 💥💥💥 : Please enter valid coordinates and orientation with a space between Xcoordinate, Y coordinate and Orientation! (✅ eg: 1 2 N - Here 1 is the x coordinate, 2 is the y coordinate and N is the orientation)"
           );
           this.setInitialCoordinates(roverName);
         }
@@ -118,9 +112,7 @@ export class Rover {
         roverName,
         loc[0],
         loc[1],
-        loc[2],
-        platLength,
-        platWidth
+        loc[2]
       );
       selectedRoverCtrl.move();
     }
