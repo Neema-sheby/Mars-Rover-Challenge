@@ -50,11 +50,13 @@ Enter moves of Rover1 eg: MLRMMLR ➡️ :
 ## Instructions to move Rove:
 
 A string of letters mentioned below are used to move or rotate the Rover.
+
 ```
 L - Spins the Rover 90 degrees Left without moving from the current coordinate point.
 R - Spins the Rover 90 degrees Rightwithout moving from the current coordinate point.
 M - Moves the Rover forward by one grid point, maintaining the same heading/orientation.
 ```
+
 ## Movement Rules:
 
 Both Rovers cannot move at the same time. The first Rover need to finish moving first before the second one can move.
