@@ -10,6 +10,8 @@ export function checkIfAllDataEntered(loc: string): boolean {
 export function checkIfNumbers(num: any): boolean {
   if (isNaN(num)) return false;
   else if (num === "") return false;
+  else if (num === " ") return false;
+  else if (num === null) return false;
   else {
     return true;
   }

@@ -5,6 +5,6 @@ import { selectRovers } from "./controller";
 
 //reset;
 export function reset(): void {
-  clear()
+  clear();
   selectRovers();
 }

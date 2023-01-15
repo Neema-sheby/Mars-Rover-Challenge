@@ -2,11 +2,11 @@
   "name": "mars-rover-challenge",
   "version": "1.0.0",
   "description": "",
-  "main": "./build/ts/controller.js",
+  "main": "./build/controller.js",
   "scripts": {
-    "build": "tsc --project tsconfig.build.json ",
-    "start": "nodemon controller.ts",
-    "test": "jest"
+    "build": "tsc -w",
+    "start": "nodemon",
+    "test": "jest --detectOpenHandles"
   },
   "repository": {
     "type": "git",

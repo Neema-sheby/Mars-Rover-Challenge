@@ -24,8 +24,6 @@ export class RoverControls {
   }
 
   public move(): void {
-    let x: number = this.cordX;
-    let y: number = this.cordY;
     const roverLocation = readRoverLocation();
     print("");
     print("----------------------------------------------");
@@ -39,65 +37,21 @@ export class RoverControls {
       `Enter moves of ${this.roverName} eg: MLRMMLR :`,
       (ans: string) => {
         if (checkKeysEntered(ans)) {
-          const nav: string[] = ans.split("");
-          nav.forEach((key) => {
-            if (key === "M") {
-              if (this.dir === "N" && this.cordY >= 0) {
-                y += 1;
-                if (this.isRoverInBoundary(x, y)) {
-                  this.cordY = y;
-                } else {
-                  y = this.cordY;
-                }
-              } else if (this.dir === "E" && this.cordX <= this.platWidth) {
-                x += 1;
-                if (this.isRoverInBoundary(x, y)) {
-                  this.cordX = x;
-                } else {
-                  x = this.cordX;
-                }
-              } else if (this.dir === "S" && this.cordY <= this.platWidth) {
-                y -= 1;
-                if (this.isRoverInBoundary(x, y)) {
-                  this.cordY = y;
-                } else {
-                  y = this.cordY;
-                }
-              } else if (this.dir === "W" && this.cordX >= 0) {
-                x -= 1;
-                if (this.isRoverInBoundary(x, y)) {
-                  this.cordX = x;
-                } else {
-                  x = this.cordX;
-                }
-              }
-            }
-            if (key === "R") {
-              if (this.dir === "N") this.dir = "E";
-              else if (this.dir === "E") this.dir = "S";
-              else if (this.dir === "S") this.dir = "W";
-              else if (this.dir === "W") this.dir = "N";
-            }
-            if (key === "L") {
-              if (this.dir === "N") this.dir = "W";
-              else if (this.dir === "W") this.dir = "S";
-              else if (this.dir === "S") this.dir = "E";
-              else if (this.dir === "E") this.dir = "N";
-              0;
-            }
-          });
+          //----------------------------------------------
+          const finalPositionOfRover = this.startMovingRover(
+            ans,
+            this.cordX,
+            this.cordY,
+            this.dir,
+            this.platLength,
+            this.platWidth
+          );
           clear();
           print("");
           print("----------------------------------------------");
           print("");
           console.log(
-            `${this.roverName} 🚗  moved to 🚩 🚩 🚩  ( ${[
-              this.cordX,
-              this.cordY,
-              this.dir,
-            ].join(
-              ""
-            )} ) from initial position ( ${roverLocation} ) with moves 🕹️  ( ${ans} )`
+            `${this.roverName} 🚗  moved to 🚩 🚩 🚩  ( ${finalPositionOfRover} ) from initial position ( ${roverLocation} ) with moves 🕹️  ( ${ans} )`
           );
           print("");
           print("----------------------------------------------");
@@ -118,6 +72,67 @@ export class RoverControls {
         }
       }
     );
+  }
+
+  public startMovingRover(
+    moves: string,
+    cordX: number,
+    cordY: number,
+    dir: string,
+    plateauLength: number,
+    plateauWidth: number
+  ): string {
+    let x: number = cordX;
+    let y: number = cordY;
+
+    const nav: string[] = moves.split("");
+    nav.forEach((key) => {
+      if (key === "M") {
+        if (dir === "N" && cordY < plateauWidth) {
+          y += 1;
+          if (this.isRoverInBoundary(x, y)) {
+            cordY = y;
+          } else {
+            y = cordY;
+          }
+        } else if (dir === "E" && cordX < plateauLength) {
+          x += 1;
+          if (this.isRoverInBoundary(x, y)) {
+            cordX = x;
+          } else {
+            x = cordX;
+          }
+        } else if (dir === "S" && cordY > 0) {
+          y -= 1;
+          if (this.isRoverInBoundary(x, y)) {
+            cordY = y;
+          } else {
+            y = cordY;
+          }
+        } else if (dir === "W" && cordX > 0) {
+          x -= 1;
+          if (this.isRoverInBoundary(x, y)) {
+            cordX = x;
+          } else {
+            x = cordX;
+          }
+        }
+      }
+      if (key === "R") {
+        if (dir === "N") dir = "E";
+        else if (dir === "E") dir = "S";
+        else if (dir === "S") dir = "W";
+        else if (dir === "W") dir = "N";
+      }
+      if (key === "L") {
+        if (dir === "N") dir = "W";
+        else if (dir === "W") dir = "S";
+        else if (dir === "S") dir = "E";
+        else if (dir === "E") dir = "N";
+        0;
+      }
+    });
+    return [cordX, cordY, dir].join("");
   }
 
   public isRoverInBoundary(x: number, y: number): Boolean {
