@@ -52,7 +52,7 @@ You've selected Rover1 🚗 😊
 
 ----------------------------------------------
 
-Enter the coordinates and orientation of Rover1 🚗 (✅ eg: 12N - Here 1 is the x coordinate, 2 is the y coordinate and N is the orientation) ➡️  :
+Enter the coordinates and orientation of Rover1 🚗 (✅ eg: 1 2 N - Here 1 is the x coordinate, 2 is the y coordinate and N is the orientation) ➡️  :
 ```
 
 ### Fourth Line of Input to the selected Rover
@@ -95,16 +95,16 @@ Output will be the final position of the Rover with the direction it's facing.
 
 ### Lines of Input to the Program:
 
-`10 8`
+`1 0 8`
 
 `1`
 
-`12N`
+`1 2 N`
 
 `LMLMLMLMM`
 
 ### Expected Output:
 
 ```
-Rover1 🚗  moved to 🚩 🚩 🚩  ( 13N ) from initial position ( 12N ) with moves 🕹️  ( LMLMLMLMM )
+Rover1 🚗  moved to 🚩 🚩 🚩  ( 1 3 N ) from initial position ( 1 2 N ) with moves 🕹️  ( LMLMLMLMM )
 ```
