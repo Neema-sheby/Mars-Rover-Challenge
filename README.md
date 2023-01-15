@@ -6,7 +6,16 @@ The task is to move rovers on the surface of Mars. The surface is represented by
 
 ## Inputs to the program:
 
-1. Select the Rover : Rover1 or Rover2.
+### First Line of Input to the Program
+
+The first line of input is to select the Rover to move.
+
+```
+Select the Rover to move 🚗 from below :
+1 - Rover1 🚗
+2 - Rover2 🚗
+Enter the option number of Rover ➡️  :
+```
 
 The first line inputted into the program represents the upper-right coordinates of the Plateau.
 
