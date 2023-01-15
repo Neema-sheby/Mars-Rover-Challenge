@@ -62,9 +62,7 @@ function enterPlateauGrid(): void {
 enterPlateauGrid();
 
 // Select the Rover to move
-
 export function selectRovers(): void {
-  clear();
   print("");
   print("----------------------------------------------");
   print("");

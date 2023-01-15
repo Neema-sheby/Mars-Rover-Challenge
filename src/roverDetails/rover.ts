@@ -45,7 +45,6 @@ export class Rover {
             this.dataEntered = true;
             this.location.push(+arr[0]);
           } else {
-            //clear();
             print("");
             print("----------------------------------------------");
             print("");
@@ -58,7 +57,6 @@ export class Rover {
               this.dataEntered = true;
               this.location.push(+arr[1]);
             } else {
-              //clear();
               print("");
               print("----------------------------------------------");
               print("");
@@ -76,10 +74,9 @@ export class Rover {
               print("----------------------------------------------");
               print("");
               print(`Now ${roverName} is ready to move 🚗 🚗 🚗 `);
-              writeRoverLocation(this.location.join(""));
+              writeRoverLocation(this.location.join(" "));
               this.moveRover(this.location, roverName);
             } else {
-              // clear();
               print("");
               print("----------------------------------------------");
               print("");
@@ -104,9 +101,7 @@ export class Rover {
 
   // Move the selected Rover
   public moveRover(loc: any[], roverName: string): void {
-    const roverLoc: string[] = readRoverLocation()
-      .replace(/\s+/g, "")
-      .split("");
+    const roverLoc: string[] = readRoverLocation().split(" ");
     if (roverLoc.length === 3) {
       const selectedRoverCtrl = new RoverControls(
         roverName,

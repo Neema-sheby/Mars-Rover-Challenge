@@ -2,6 +2,7 @@ import { isRoverInBoundary } from "./roverChecks";
 
 //-------------------------------------------------------------------------------------
 
+// moves the Rover based on the inputed Rover move
 export function startMovingRover(
   moves: string,
   cordX: number,

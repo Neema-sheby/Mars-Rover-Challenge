@@ -1,9 +1,9 @@
 import { startMovingRover } from "../roverDetails/startMovingRover";
-import { PLATEAU_TEST_LENGTH, PLATEAU_TEST_WIDTH } from "../config";
+import { TEST_UPPER_RIGHT_COORD_X, TEST_UPPER_RIGHT_COORD_Y } from "../config";
 
 describe("Checking if Rover can rotate and move ", () => {
-  const plateauLength = PLATEAU_TEST_LENGTH;
-  const plateauWidth = PLATEAU_TEST_WIDTH;
+  const plateauLength = TEST_UPPER_RIGHT_COORD_X;
+  const plateauWidth = TEST_UPPER_RIGHT_COORD_Y;
   test("Rover can move one step forward", () => {
     expect(startMovingRover("M", 1, 2, "N", plateauLength, plateauWidth)).toBe(
       "13N"

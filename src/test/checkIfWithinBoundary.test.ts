@@ -1,9 +1,9 @@
 import { isRoverInBoundary } from "../roverDetails/roverChecks";
-import { PLATEAU_TEST_LENGTH, PLATEAU_TEST_WIDTH } from "../config";
+import { TEST_UPPER_RIGHT_COORD_X, TEST_UPPER_RIGHT_COORD_Y } from "../config";
 
 describe("Checking if the Rover is moving within boundary", () => {
-  const plateauLength = PLATEAU_TEST_LENGTH;
-  const plateauWidth = PLATEAU_TEST_WIDTH;
+  const plateauLength = TEST_UPPER_RIGHT_COORD_X;
+  const plateauWidth = TEST_UPPER_RIGHT_COORD_Y;
   test("returns false if Xcordinate < 0 ", () => {
     expect(isRoverInBoundary(-1, 2, plateauLength, plateauWidth)).toBe(false);
   });
