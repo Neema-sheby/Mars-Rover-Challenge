@@ -31,7 +31,7 @@ function enterPlateauGrid(): void {
   print("");
   print("----------------------------------------------");
   print("");
-  askQuestion("Enter the plateau grid ➡️  : ", (ans: string) => {
+  askQuestion("Enter the plateau grid 🏞️  for Rover to move (eg: 10 8) ➡️  : ", (ans: string) => {
     if (checkGridData(ans)) {
       const platDataArr: string[] = ans.split(" ");
       if (checkIfNumbers(+platDataArr[0]) && checkIfNumbers(+platDataArr[1])) {

@@ -2,7 +2,7 @@
 
 ## Description
 
-The task is to move rovers on the surface of Mars. The surface is represented by a Plateau which is a square grid. Rovers navigate the plateau using their special cameras and robot arms to collect samples back to planet Earth. Currently there are two Rovers: Rover1 and Rover2, available in mars for sample collection. The position of Rover is represented by an x and y axis and the direction at which it's facing by North(N), South(S), East(E), West(W). So, if the rover is at postion (0,0) facing North. The input will be 00N.
+We are going to move the Rovers 🤖 on the surface of Mars!. It's surface is represented by a Plateau which can be set as a square/rectangular grid as your preference. Rovers navigate the Plateau so they can use their special cameras 📷 and robot arms 🦾 to collect samples back to Planet Earth 🌏. Currently there are two Rovers: Rover1 and Rover2 landed on Mars ready to be navigated for sample collection. The position of Rover is represented by an X axis and Y axis. The direction at which it's facing is represented by North(N), South(S), East(E), West(W). So, if the rover is at postion `(0,0)` facing North. The input will be `0 0 N`.
 
 ## How to install and run the Project:
 
@@ -20,7 +20,21 @@ The task is to move rovers on the surface of Mars. The surface is represented by
 
 ### First Line of Input to the Program
 
-The first line of input is to select the Rover to move. Enter the option number of Rover - 1 or 2.
+The first line of input is to enter the upper right coordinates of the Plateau assuming the lower left coordinates to be (0,0). eg: `5 5` or `10 8`
+
+```
+----------------------------------------------
+
+Welcome to Mars 😊 !
+
+----------------------------------------------
+
+Enter the plateau grid 🏞️  for Rover to move (eg: 10 8) ➡️  :
+```
+
+### Second Line of Input to the Program
+
+The second line of input is to select the Rover to move. Enter the option number of Rover - 1 or 2.
 
 ```
 Select the Rover to move 🚗 from below :
@@ -29,9 +43,9 @@ Select the Rover to move 🚗 from below :
 Enter the option number of Rover ➡️  :
 ```
 
-### Second Line of Input to the Program
+### Third Line of Input to the Program
 
-The Rover’s position is represented by two integers representing the X and Y coordinates and a letter representing where the Rover is facing (its orientation). eg: `12N`
+The third line of input is the Rover’s position, which is represented by two integers representing the X and Y coordinates and a letter representing, where the Rover is facing (its orientation). eg: `1 2 N`
 
 ```
 You've selected Rover1 🚗 😊
@@ -41,9 +55,9 @@ You've selected Rover1 🚗 😊
 Enter the coordinates and orientation of Rover1 🚗 (✅ eg: 12N - Here 1 is the x coordinate, 2 is the y coordinate and N is the orientation) ➡️  :
 ```
 
-### Third Line of Input to a Rover
+### Fourth Line of Input to the selected Rover
 
-A string of letters representing the instructions to move the Rover around the Plateau: eg: `MMMLLLMMR`
+The fourth line of input is a string of letters representing the instructions to move the Rover around the Plateau: eg: `MMMLLLMMR`
 
 ```
 ----------------------------------------------
