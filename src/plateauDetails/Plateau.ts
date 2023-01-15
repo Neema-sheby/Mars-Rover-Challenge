@@ -1,3 +1,4 @@
+import { print, clear, askQuestion } from "../console";
 import { NUM_ROW, NUM_COL, GRID_GAP } from "../config";
 
 //-------------------------------------------------------------------------------------
@@ -13,6 +14,20 @@ export class Plateau {
     this.numRow = numRow;
     this.numCol = numCol;
     this.gridGap = gridGap;
+  }
+
+  public enterPlateauGrid(): void {
+    print("");
+    print("----------------------------------------------");
+    print("");
+    print("Welcome to Mars 😊 !");
+    print("");
+    print("----------------------------------------------");
+    print("");
+    askQuestion("Enter the plateau grid ➡️  : ", (ans: string) => {
+      
+    });
+    print("");
   }
 
   public getLength(): number {

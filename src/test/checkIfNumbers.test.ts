@@ -11,10 +11,6 @@ describe("Checking if the coordinates entered are numbers", () => {
     expect(checkIfNumbers(" ")).toBe(false);
   });
 
-  test("returns false for entering space between digit numbers", () => {
-    expect(checkIfNumbers("1 2")).toBe(false);
-  });
-
   test("returns false for entering alphabets", () => {
     expect(checkIfNumbers("abc")).toBe(false);
   });

@@ -1,6 +1,6 @@
 // Checking if the x coordinates and y coordinates are number
 export function checkIfAllDataEntered(loc: string): boolean {
-  const locArr = loc.split("");
+  const locArr = loc.split(" ");
   if (locArr.length === 3) {
     return true;
   } else return false;

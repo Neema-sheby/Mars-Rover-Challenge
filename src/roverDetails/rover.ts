@@ -42,10 +42,10 @@ export class Rover {
     roverName = readSelectedRoverName();
     this.location.length = 0;
     askQuestion(
-      `Enter the coordinates and orientation of ${roverName} 🚗 (✅ eg: 12N - Here 1 is the x coordinate, 2 is the y coordinate and N is the orientation) ➡️  : `,
+      `Enter the coordinates and orientation of ${roverName} 🚗 (✅ eg: 1 2 N - Here 1 is the x coordinate, 2 is the y coordinate and N is the orientation) ➡️  : `,
       (ans: string) => {
         if (checkIfAllDataEntered(ans)) {
-          const arr: string[] = ans.split("");
+          const arr: string[] = ans.split(" ");
 
           if (checkIfNumbers(+arr[0])) {
             this.dataEntered = true;
@@ -100,7 +100,7 @@ export class Rover {
           print("----------------------------------------------");
           print("");
           print(
-            "Error 💥💥💥 : Please enter valid coordinates and orientation ! (✅ eg: 12N - Here 1 is the x coordinate, 2 is the y coordinate and N is the orientation)"
+            "Error 💥💥💥 : Please enter valid coordinates and orientation ! (✅ eg: 1 2 N - Here 1 is the x coordinate, 2 is the y coordinate and N is the orientation)"
           );
           this.setInitialCoordinates(roverName);
         }

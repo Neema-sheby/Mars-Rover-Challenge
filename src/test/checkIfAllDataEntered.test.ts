@@ -5,18 +5,18 @@ describe("Checking if all the data (coordinates and orientation) are entered", (
     expect(checkIfAllDataEntered("")).toBe(false);
   });
   test("returns false for entering coordinates only", () => {
-    expect(checkIfAllDataEntered("12")).toBe(false);
+    expect(checkIfAllDataEntered("1 2")).toBe(false);
   });
   test("returns false for entering orientation only", () => {
     expect(checkIfAllDataEntered("N")).toBe(false);
   });
   test("returns false for entering one coordinate and orientation", () => {
-    expect(checkIfAllDataEntered("1N")).toBe(false);
+    expect(checkIfAllDataEntered("1 N")).toBe(false);
   });
   test("returns false for entering strings containing more than three characters", () => {
-    expect(checkIfAllDataEntered("32NNN")).toBe(false);
+    expect(checkIfAllDataEntered("3 2 N N N")).toBe(false);
   });
   test("returns true for entering all three data", () => {
-    expect(checkIfAllDataEntered("32N")).toBe(true);
+    expect(checkIfAllDataEntered("3 2 N")).toBe(true);
   });
 });
