@@ -34,6 +34,6 @@ describe("Checking if the Rover is moving within boundary", () => {
     expect(isRoverInBoundary(1, 1, platLength, platWidth)).toBe(true);
   });
   test("returns true for if Ycoordinate < plateau width", () => {
-    expect(isRoverInBoundary(1, 10, platLength, platWidth)).toBe(true);
+    expect(isRoverInBoundary(1, 7, platLength, platWidth)).toBe(true);
   });
 });

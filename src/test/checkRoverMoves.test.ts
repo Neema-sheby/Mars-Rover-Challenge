@@ -35,7 +35,7 @@ describe("Checking if Rover can rotate and move ", () => {
   test("Rover stops moving when it reaches north edge of plateau", () => {
     expect(
       startMovingRover("MMMMMMMMMM", 1, 2, "N", platLength, platWidth)
-    ).toBe("110N");
+    ).toBe("18N");
   });
   test("Rover stops moving when it reaches south edge of plateau", () => {
     expect(startMovingRover("RRMMM", 1, 2, "N", platLength, platWidth)).toBe(
@@ -52,15 +52,15 @@ describe("Checking if Rover can rotate and move ", () => {
       "02W"
     );
   });
-  test("Rover can stop when it reaches edge of north boundary and move east along boundary", () => {
+  test("Rover stops when it reaches edge of north boundary and move east along boundary", () => {
     expect(
       startMovingRover("MMMMMMMMMMRMM", 1, 2, "N", platLength, platWidth)
-    ).toBe("310E");
+    ).toBe("38E");
   });
-  test("Rover can stop when it reaches edge of north boundary and move west along boundary", () => {
+  test("Rover stops when it reaches edge of north boundary and move west along boundary", () => {
     expect(
       startMovingRover("MMMMMMMMMMLMM", 1, 2, "N", platLength, platWidth)
-    ).toBe("010W");
+    ).toBe("08W");
   });
 
   test("Rover can stop when it reaches edge of south boundary and move east along boundary", () => {
