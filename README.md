@@ -1,24 +1,22 @@
 # Mars Rover Challenge
 
-## The task is to move rovers around the surface of Mars. The surface is represented by a Plateau which is a square grid. Rovers navigate the plateau using their special cameras and robot arms to collect samples back to planet Earth.
+## Description
 
-## Currently there are two Rovers: Rover1 and Rover2, available in mars for sample collection.
+The task is to move rovers around the surface of Mars. The surface is represented by a Plateau which is a square grid. Rovers navigate the plateau using their special cameras and robot arms to collect samples back to planet Earth. Currently there are two Rovers: Rover1 and Rover2, available in mars for sample collection. The position of Rover is represented by an x and y axis and the direction at which it's facing by North(N), South(S), East(E), West(W). So, if the rover is at postion (0,0) facing North. The input will be 00N.
 
-## The position of Rover is represented by an x and y axis and the direction at which it's facing by North(N), South(S), East(E), West(W). So, if the rover is at postion (0,0) facing North. The input will be 00N.
+## Inputs to the program:
 
-# Inputs to the program:
+1. Select the Rover : Rover1 or Rover2.
 
-### 1. Select the Rover : Rover1 or Rover2.
-
-### The first line inputted into the program represents the upper-right coordinates of the Plateau.
+The first line inputted into the program represents the upper-right coordinates of the Plateau.
 
 `5 5`
 
-### This Plateau has maximum (x, y) co-ordinates of (5, 5).
+This Plateau has maximum (x, y) co-ordinates of (5, 5).
 
-### N.B. Assume that the lower-left coordinate is (0, 0).
+N.B. Assume that the lower-left coordinate is (0, 0).
 
-### 3. Enter the moves of the Rover
+3. Enter the moves of the Rover
 
 Instructions to move Rove:
 A string of letters mentioned below are used to move or rotate the Rover.
