@@ -25,9 +25,22 @@ export function checkIfOrientation(dir: string): boolean {
   else if (dir === "W") return true;
   else return false;
 }
+// Check if Rover is moving within boundary
+export function isRoverInBoundary(
+  x: number,
+  y: number,
+  plateauLength: number,
+  plateauWidth: number
+): Boolean {
+  if (x > plateauLength || y > plateauWidth || x < 0 || y < 0) return false;
+  else return true;
+}
 
+// Check if the correct move keys are entered
 export function checkKeysEntered(keys: string): boolean {
-  if (keys.match(/[A-KN-QS-Za-z]/gm)) {
-    return false;
-  } else return true;
+  if (keys.match(/[A-KN-QS-Za-z0-9]/gm)) return false;
+  else if (keys === "") return false;
+  else if (keys === " ") return false;
+  else if (keys === null) return false;
+  else return true;
 }
