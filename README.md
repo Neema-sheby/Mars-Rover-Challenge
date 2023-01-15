@@ -19,9 +19,7 @@ Enter the option number of Rover ➡️  :
 
 ### Second Line of Input to the Program
 
-The Rover’s position is represented by two integers representing the X and Y coordinates and a letter representing where the Rover is facing (its orientation).
-
-`12N`
+The Rover’s position is represented by two integers representing the X and Y coordinates and a letter representing where the Rover is facing (its orientation). eg: `12N`
 
 ```
 You've selected Rover1 🚗 😊
@@ -33,9 +31,7 @@ Enter the coordinates and orientation of Rover1 🚗 (✅ eg: 12N - Here 1 is th
 
 ## Third Line of Input to a Rover
 
-A string of letters representing the instructions to move the Rover around the Plateau.
-
-`MMMLLLMMR`
+A string of letters representing the instructions to move the Rover around the Plateau: eg: `MMMLLLMMR`
 
 ```
 ----------------------------------------------
@@ -52,6 +48,7 @@ Enter moves of Rover1 eg: MLRMMLR :
 ```
 
 Instructions to move Rove:
+
 A string of letters mentioned below are used to move or rotate the Rover.
 L - Spins the Rover 90 degrees Left without moving from the current coordinate point.
 R - Spins the Rover 90 degrees Rightwithout moving from the current coordinate point.
