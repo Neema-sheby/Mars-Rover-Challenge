@@ -8,7 +8,7 @@ The task is to move rovers on the surface of Mars. The surface is represented by
 
 ### First Line of Input to the Program
 
-The first line of input is to select the Rover to move.
+The first line of input is to select the Rover to move. Enter the option number of Rover - 1 or 2.
 
 ```
 Select the Rover to move 🚗 from below :
@@ -17,15 +17,39 @@ Select the Rover to move 🚗 from below :
 Enter the option number of Rover ➡️  :
 ```
 
-The first line inputted into the program represents the upper-right coordinates of the Plateau.
+### Second Line of Input to the Program
 
-`5 5`
+The Rover’s position is represented by two integers representing the X and Y coordinates and a letter representing where the Rover is facing (its orientation).
 
-This Plateau has maximum (x, y) co-ordinates of (5, 5).
+`12N`
 
-N.B. Assume that the lower-left coordinate is (0, 0).
+```
+You've selected Rover1 🚗 😊
 
-3. Enter the moves of the Rover
+----------------------------------------------
+
+Enter the coordinates and orientation of Rover1 🚗 (✅ eg: 12N - Here 1 is the x coordinate, 2 is the y coordinate and N is the orientation) ➡️  :
+```
+
+## Third Line of Input to a Rover
+
+A string of letters representing the instructions to move the Rover around the Plateau.
+
+`MMMLLLMMR`
+
+```
+----------------------------------------------
+
+Now Rover1 is ready to move 🚗 🚗 🚗
+
+----------------------------------------------
+Enter M 🚗 to move the Rover forward by one grid point
+Enter R ➡️  to rotate the Rover 90 degrees right
+Enter L ⬅️  to rotate the Rover 90 degrees left
+
+----------------------------------------------
+Enter moves of Rover1 eg: MLRMMLR :
+```
 
 Instructions to move Rove:
 A string of letters mentioned below are used to move or rotate the Rover.
