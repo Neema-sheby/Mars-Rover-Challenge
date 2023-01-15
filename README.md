@@ -4,6 +4,18 @@
 
 The task is to move rovers on the surface of Mars. The surface is represented by a Plateau which is a square grid. Rovers navigate the plateau using their special cameras and robot arms to collect samples back to planet Earth. Currently there are two Rovers: Rover1 and Rover2, available in mars for sample collection. The position of Rover is represented by an x and y axis and the direction at which it's facing by North(N), South(S), East(E), West(W). So, if the rover is at postion (0,0) facing North. The input will be 00N.
 
+## How to Install and Run the Project:
+
+`npm install`
+
+`npm run build`
+
+`npm run start`
+
+## How to run test:
+
+`npm run test`
+
 ## Inputs to the program:
 
 ### First Line of Input to the Program
