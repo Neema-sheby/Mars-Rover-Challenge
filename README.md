@@ -41,7 +41,7 @@ You've selected Rover1 🚗 😊
 Enter the coordinates and orientation of Rover1 🚗 (✅ eg: 12N - Here 1 is the x coordinate, 2 is the y coordinate and N is the orientation) ➡️  :
 ```
 
-## Third Line of Input to a Rover
+### Third Line of Input to a Rover
 
 A string of letters representing the instructions to move the Rover around the Plateau: eg: `MMMLLLMMR`
 
@@ -89,4 +89,6 @@ Output will be the final position of the Rover with the direction it's facing.
 
 ### Expected Output:
 
-`1 3 N`
+```
+Rover1 🚗  moved to 🚩 🚩 🚩  ( 13N ) from initial position ( 12N ) with moves 🕹️  ( LMLMLMLMM )
+```
