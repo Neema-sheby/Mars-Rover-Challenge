@@ -31,32 +31,38 @@ function enterPlateauGrid(): void {
   print("");
   print("----------------------------------------------");
   print("");
-  askQuestion("Enter the plateau grid 🏞️  for Rover to move (eg: 10 8) ➡️  : ", (ans: string) => {
-    if (checkGridData(ans)) {
-      const platDataArr: string[] = ans.split(" ");
-      if (checkIfNumbers(+platDataArr[0]) && checkIfNumbers(+platDataArr[1])) {
-        writePlateauGrid(ans);
-        writeIsPlateauSet("true");
-        checkPlateauSet();
+  askQuestion(
+    "Enter the plateau grid 🏞️  for Rover to move (eg: 10 8) ➡️  : ",
+    (ans: string) => {
+      if (checkGridData(ans)) {
+        const platDataArr: string[] = ans.split(" ");
+        if (
+          checkIfNumbers(+platDataArr[0]) &&
+          checkIfNumbers(+platDataArr[1])
+        ) {
+          writePlateauGrid(ans);
+          writeIsPlateauSet("true");
+          checkPlateauSet();
+        } else {
+          clear();
+          print("----------------------------------------------");
+          print("");
+          print("Error 💥💥💥 : Please enter a valid number");
+          print("");
+          enterPlateauGrid();
+        }
       } else {
         clear();
         print("----------------------------------------------");
         print("");
-        print("Error 💥💥💥 : Please enter a valid number");
+        print(
+          "Error 💥💥💥 : Please enter a valid X coordinate and Y coordinate with spaces between!"
+        );
         print("");
         enterPlateauGrid();
       }
-    } else {
-      clear();
-      print("----------------------------------------------");
-      print("");
-      print(
-        "Error 💥💥💥 : Please enter a valid X coordinate and Y coordinate with spaces between!"
-      );
-      print("");
-      enterPlateauGrid();
     }
-  });
+  );
   print("");
 }
 enterPlateauGrid();
@@ -66,7 +72,9 @@ export function selectRovers(): void {
   print("");
   print("----------------------------------------------");
   print("");
-  print(`Your Platform 🏞️   is  (${readPlateauGrid()})`);
+  print(
+    `Your Plateau upper right coordinates 🏞️   are  (${readPlateauGrid()})`
+  );
   print("");
   print("----------------------------------------------");
   print("");
