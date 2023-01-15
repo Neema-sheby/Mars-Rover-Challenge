@@ -95,6 +95,8 @@ Output will be the final position of the Rover with the direction it's facing.
 
 ### Lines of Input to the Program:
 
+`10 8`
+
 `1`
 
 `12N`
