@@ -1,2 +1,7 @@
 node_modules
-build
+build/plateauDetails
+build/roverDetails
+build/rovers
+build/config.js
+build/console.jsbuild/readWriteFile.js
+build/reset.js
