@@ -1,8 +1,8 @@
 import { startMovingRover } from "./startMovingRover";
-import { print, askQuestion, clear, onEnter } from "../console";
+import { print, askQuestion, clear, onEnter } from "../helper/console";
 import { checkKeysEntered } from "./roverChecks";
 import { readRoverLocation, readPlateauGrid } from "../readWriteFile";
-import { reset } from "../reset";
+import { reset } from "../helper/reset";
 
 //-------------------------------------------------------------------------------------
 

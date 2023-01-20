@@ -1,5 +1,5 @@
 import { roverArray } from "./rovers/rovers";
-import { print, clear, askQuestion } from "./console";
+import { print, clear, askQuestion } from "./helper/console";
 import {
   writeSelectedRoverName,
   writeIsRoverSelected,
@@ -14,7 +14,6 @@ import { checkGridData, checkIfNumbers } from "./roverDetails/roverChecks";
 import { Rover } from "./roverDetails/rover";
 
 //-------------------------------------------------------------------------------------
-
 //Reset the files
 writePlateauGrid("");
 writeIsPlateauSet("false");

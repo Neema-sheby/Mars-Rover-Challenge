@@ -1,5 +1,5 @@
 import { clear } from "./console";
-import { selectRovers } from "./controller";
+import { selectRovers } from "../controller";
 
 //----------------------------------------------------------------
 

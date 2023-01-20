@@ -1,4 +1,3 @@
-import { plateauLength, plateauWidth } from "../plateauDetails/Plateau";
 import {
   checkIfAllDataEntered,
   checkIfNumbers,
@@ -10,7 +9,7 @@ import {
   readSelectedRoverName,
 } from "../readWriteFile";
 import { RoverControls } from "./roverControls";
-import { print, clear, askQuestion } from "../console";
+import { print, clear, askQuestion } from "../helper/console";
 
 //-------------------------------------------------------------------------------------
 

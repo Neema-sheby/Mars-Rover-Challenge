@@ -2,7 +2,7 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.selectRovers = void 0;
 const rovers_1 = require("./rovers/rovers");
-const console_1 = require("./console");
+const console_1 = require("./helper/console");
 const readWriteFile_1 = require("./readWriteFile");
 const roverChecks_1 = require("./roverDetails/roverChecks");
 //-------------------------------------------------------------------------------------

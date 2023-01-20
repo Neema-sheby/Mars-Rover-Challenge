@@ -1,5 +1,8 @@
 import { startMovingRover } from "../roverDetails/startMovingRover";
-import { TEST_UPPER_RIGHT_COORD_X, TEST_UPPER_RIGHT_COORD_Y } from "../config";
+import {
+  TEST_UPPER_RIGHT_COORD_X,
+  TEST_UPPER_RIGHT_COORD_Y,
+} from "../helper/config";
 
 describe("Checking if Rover can rotate and move ", () => {
   const plateauLength = TEST_UPPER_RIGHT_COORD_X;
